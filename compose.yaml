@@ -1,0 +1,13 @@
+services:
+  taskflow:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      LOG_LEVEL: INFO
+    volumes:
+      - taskflow-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  taskflow-data:
